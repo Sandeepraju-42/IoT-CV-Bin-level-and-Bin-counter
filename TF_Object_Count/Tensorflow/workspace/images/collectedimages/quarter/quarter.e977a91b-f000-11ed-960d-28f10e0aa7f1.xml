@@ -1,0 +1,26 @@
+<annotation>
+	<folder>quarter</folder>
+	<filename>quarter.e977a91b-f000-11ed-960d-28f10e0aa7f1.jpg</filename>
+	<path>C:\Users\sandeep\Desktop\ML2303 Digitalisation for Sustainable Production\Group 7\Tensorflow\workspace\images\collectedimages\quarter\quarter.e977a91b-f000-11ed-960d-28f10e0aa7f1.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Big_quarter</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>216</xmin>
+			<ymin>159</ymin>
+			<xmax>468</xmax>
+			<ymax>323</ymax>
+		</bndbox>
+	</object>
+</annotation>

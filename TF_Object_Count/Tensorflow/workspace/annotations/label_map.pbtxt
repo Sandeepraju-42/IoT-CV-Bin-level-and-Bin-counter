@@ -1,0 +1,40 @@
+item { 
+	name:'Big_zero'
+	id:1
+}
+item { 
+	name:'Big_quarter'
+	id:2
+}
+item { 
+	name:'Big_half'
+	id:3
+}
+item { 
+	name:'Big_threequarter'
+	id:4
+}
+item { 
+	name:'Big_full'
+	id:5
+}
+item { 
+	name:'Small_zero'
+	id:6
+}
+item { 
+	name:'Small_quarter'
+	id:7
+}
+item { 
+	name:'Small_half'
+	id:8
+}
+item { 
+	name:'Small_threequarter'
+	id:9
+}
+item { 
+	name:'Small_full'
+	id:10
+}

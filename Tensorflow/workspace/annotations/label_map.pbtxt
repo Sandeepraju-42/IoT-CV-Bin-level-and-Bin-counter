@@ -1,0 +1,20 @@
+item { 
+	name:'zero'
+	id:1
+}
+item { 
+	name:'quarter'
+	id:2
+}
+item { 
+	name:'half'
+	id:3
+}
+item { 
+	name:'threequarter'
+	id:4
+}
+item { 
+	name:'full'
+	id:5
+}

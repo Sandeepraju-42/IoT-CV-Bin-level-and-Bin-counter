@@ -1,0 +1,403 @@
+[
+    {
+        "id": "a170d3414d7d148c",
+        "type": "tab",
+        "label": "flow1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "eb7ae39ff05bf392",
+        "type": "inject",
+        "z": "a170d3414d7d148c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 60,
+        "wires": [
+            [
+                "6bdbb1e3c01862cc"
+            ]
+        ]
+    },
+    {
+        "id": "6bdbb1e3c01862cc",
+        "type": "exec",
+        "z": "a170d3414d7d148c",
+        "command": "python3 -u  /home/pi/Desktop/Object_Detection/TFODRPi/detect.py",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "true",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 300,
+        "y": 140,
+        "wires": [
+            [
+                "98ca5d29e9a5fa17",
+                "00ea643734ccbec4"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "5f1d0f2c75a4e81e",
+        "type": "switch",
+        "z": "a170d3414d7d148c",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "bin_name",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "score",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "object_count",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "time_left",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "time_stamp",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 150,
+        "y": 380,
+        "wires": [
+            [
+                "a0f104ea2d1dc283"
+            ],
+            [
+                "dd7a18f0626a4dae"
+            ],
+            [
+                "35e1243869c2e2d5"
+            ],
+            [
+                "08ae34f20ee0cded"
+            ],
+            [
+                "1cd45535426294e9"
+            ]
+        ]
+    },
+    {
+        "id": "b78ce4cc46ae358d",
+        "type": "ui_text",
+        "z": "a170d3414d7d148c",
+        "group": "c38a32b15963d001",
+        "order": 0,
+        "width": "12",
+        "height": "4",
+        "name": "",
+        "label": "Bin Name",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 580,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "fa1f0116fc386f58",
+        "type": "ui_text",
+        "z": "a170d3414d7d148c",
+        "group": "c38a32b15963d001",
+        "order": 1,
+        "width": "12",
+        "height": "4",
+        "name": "",
+        "label": "Score",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "x": 570,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "98ca5d29e9a5fa17",
+        "type": "split",
+        "z": "a170d3414d7d148c",
+        "name": "",
+        "splt": ",",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 630,
+        "y": 140,
+        "wires": [
+            [
+                "5f1d0f2c75a4e81e"
+            ]
+        ]
+    },
+    {
+        "id": "a0f104ea2d1dc283",
+        "type": "split",
+        "z": "a170d3414d7d148c",
+        "name": "Split: Bin name",
+        "splt": ":",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 380,
+        "y": 320,
+        "wires": [
+            [
+                "b78ce4cc46ae358d"
+            ]
+        ]
+    },
+    {
+        "id": "dd7a18f0626a4dae",
+        "type": "split",
+        "z": "a170d3414d7d148c",
+        "name": "split: Score",
+        "splt": ":",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 370,
+        "y": 360,
+        "wires": [
+            [
+                "fa1f0116fc386f58"
+            ]
+        ]
+    },
+    {
+        "id": "35e1243869c2e2d5",
+        "type": "split",
+        "z": "a170d3414d7d148c",
+        "name": "Split: Object count",
+        "splt": ":",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 390,
+        "y": 400,
+        "wires": [
+            [
+                "32d8e50da6eb3b4e"
+            ]
+        ]
+    },
+    {
+        "id": "08ae34f20ee0cded",
+        "type": "split",
+        "z": "a170d3414d7d148c",
+        "name": "Split: Time left",
+        "splt": ":",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 380,
+        "y": 440,
+        "wires": [
+            [
+                "de12dc101dd36092"
+            ]
+        ]
+    },
+    {
+        "id": "32d8e50da6eb3b4e",
+        "type": "ui_chart",
+        "z": "a170d3414d7d148c",
+        "name": "",
+        "group": "664b58ca329b44d4",
+        "order": 2,
+        "width": "12",
+        "height": "4",
+        "label": "Object Count",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 590,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "de12dc101dd36092",
+        "type": "ui_gauge",
+        "z": "a170d3414d7d148c",
+        "name": "",
+        "group": "664b58ca329b44d4",
+        "order": 3,
+        "width": "12",
+        "height": "4",
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "time",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#b30c00",
+            "#e6e600",
+            "#76fd08"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 570,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "1cd45535426294e9",
+        "type": "split",
+        "z": "a170d3414d7d148c",
+        "name": "Split: Time stamp",
+        "splt": ":",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 390,
+        "y": 480,
+        "wires": [
+            [
+                "3379c6bc98548dd6"
+            ]
+        ]
+    },
+    {
+        "id": "3379c6bc98548dd6",
+        "type": "ui_text",
+        "z": "a170d3414d7d148c",
+        "group": "664b58ca329b44d4",
+        "order": 0,
+        "width": "12",
+        "height": "4",
+        "name": "",
+        "label": "Current time",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 590,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "00ea643734ccbec4",
+        "type": "file",
+        "z": "a170d3414d7d148c",
+        "name": "",
+        "filename": "/home/pi/Desktop/Object_Detection/TFODRPi/output.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 790,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c38a32b15963d001",
+        "type": "ui_group",
+        "name": "Bin_Details",
+        "tab": "cf56f4904c03c3c3",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "664b58ca329b44d4",
+        "type": "ui_group",
+        "name": "Bin_Details_2",
+        "tab": "cf56f4904c03c3c3",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "cf56f4904c03c3c3",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

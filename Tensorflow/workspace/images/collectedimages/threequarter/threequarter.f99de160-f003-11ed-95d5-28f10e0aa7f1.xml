@@ -1,0 +1,26 @@
+<annotation>
+	<folder>threequarter</folder>
+	<filename>threequarter.f99de160-f003-11ed-95d5-28f10e0aa7f1.jpg</filename>
+	<path>C:\Users\sandeep\Desktop\ML2303 Digitalisation for Sustainable Production\Group 7\Tensorflow\workspace\images\collectedimages\threequarter\threequarter.f99de160-f003-11ed-95d5-28f10e0aa7f1.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Small_threequarter</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>224</xmin>
+			<ymin>189</ymin>
+			<xmax>470</xmax>
+			<ymax>359</ymax>
+		</bndbox>
+	</object>
+</annotation>

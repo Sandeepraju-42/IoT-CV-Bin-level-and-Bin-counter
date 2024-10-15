@@ -1,0 +1,26 @@
+<annotation>
+	<folder>zero</folder>
+	<filename>zero.7fa4251d-f000-11ed-a459-28f10e0aa7f1.jpg</filename>
+	<path>C:\Users\sandeep\Desktop\ML2303 Digitalisation for Sustainable Production\Group 7\Tensorflow\workspace\images\collectedimages\zero\zero.7fa4251d-f000-11ed-a459-28f10e0aa7f1.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Big_zero</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>220</xmin>
+			<ymin>149</ymin>
+			<xmax>400</xmax>
+			<ymax>406</ymax>
+		</bndbox>
+	</object>
+</annotation>
